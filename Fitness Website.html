@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Your Fitness Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .hero-section {
+            background-image: url('https://images.pexels.com/photos/8436595/pexels-photo-8436595.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Custom CSS for the hover effect on workout cards */
+        .workout-card-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease-in-out;
+        }
+        .workout-card:hover .workout-card-image {
+            transform: scale(1.05);
+        }
+        .workout-card:hover .workout-card-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="text-2xl font-bold text-gray-900">FitLife</span>
+            </a>
+            <!-- Desktop Nav Links -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors">About</a>
+                <a href="#services" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors">Services</a>
+                <a href="#workouts" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors">Workouts</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#about" class="block py-3 px-4 text-gray-600 hover:bg-gray-100 font-medium transition-colors">About</a>
+            <a href="#services" class="block py-3 px-4 text-gray-600 hover:bg-gray-100 font-medium transition-colors">Services</a>
+            <a href="#workouts" class="block py-3 px-4 text-gray-600 hover:bg-gray-100 font-medium transition-colors">Workouts</a>
+            <a href="#contact" class="block py-3 px-4 text-gray-600 hover:bg-gray-100 font-medium transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-20">
+        <!-- Hero Section -->
+        <section class="hero-section min-h-[60vh] flex items-center justify-center text-center text-white p-4">
+            <div class="bg-black bg-opacity-60 p-6 sm:p-10 rounded-xl max-w-3xl mx-auto shadow-xl">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-4">Unleash Your Inner Strength</h1>
+                <p class="text-lg sm:text-xl font-light mb-8">Personalized coaching and expert guidance for a healthier, stronger you.</p>
+                <a href="#contact" class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-105">
+                    Start Your Free Trial
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Who We Are</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">FitLife is more than just a gym; we are a community dedicated to wellness. Our passionate and certified trainers are here to guide you every step of the way, no matter your fitness level.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-8">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-indigo-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M12 20.941l-2.73-2.73a6 6 0 01-1.275-5.321 4 4 0 011.004-3.344 4 4 0 013.784-1.127l1.226.471a4 4 0 013.784 1.127 4 4 0 011.004 3.344A6 6 0 0114.73 18.21l-2.73 2.73z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">Personal Training</h3>
+                        <p class="text-gray-600">Tailored workout plans and one-on-one sessions for maximum results.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-indigo-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h-4a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v11a2 2 0 01-2 2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20h-4a2 2 0 01-2-2V7a2 2 0 012-2h4a2 2 0 012 2v11a2 2 0 01-2 2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 14h16" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16M8 8v8M16 8v8" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">Group Classes</h3>
+                        <p class="text-gray-600">Join a motivating community with our diverse and energetic group classes.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-indigo-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2 1.343-2 3-2zM9 16h6v-2h-6v2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2">Nutrition Plans</h3>
+                        <p class="text-gray-600">Expert-created meal plans to fuel your body and support your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workout Gallery Section -->
+        <section id="workouts" class="py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-8">Workout Gallery</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div id="strength" class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer workout-card" data-workout="strength">
+                        <img src="https://images.pexels.com/photos/163403/box-sport-men-training-163403.jpeg" alt="Strength Training" class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-110 workout-card-image">
+                        <div class="absolute inset-0 flex items-center justify-center p-4 workout-card-overlay">
+                            <h3 class="text-2xl font-bold text-white transition-transform duration-300 transform group-hover:scale-105">Strength Training</h3>
+                        </div>
+                    </div>
+                    <div id="cardio" class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer workout-card" data-workout="cardio">
+                        <img src="https://images.pexels.com/photos/3763868/pexels-photo-3763868.jpeg" alt="Cardio Workout" class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-110 workout-card-image">
+                        <div class="absolute inset-0 flex items-center justify-center p-4 workout-card-overlay">
+                            <h3 class="text-2xl font-bold text-white transition-transform duration-300 transform group-hover:scale-105">Cardio Workout</h3>
+                        </div>
+                    </div>
+                    <div id="yoga" class="relative overflow-hidden rounded-xl shadow-md group cursor-pointer workout-card" data-workout="yoga">
+                        <img src="https://images.pexels.com/photos/3759657/pexels-photo-3759657.jpeg" alt="Yoga and Flexibility" class="w-full h-64 object-cover transform transition-transform duration-300 group-hover:scale-110 workout-card-image">
+                        <div class="absolute inset-0 flex items-center justify-center p-4 workout-card-overlay">
+                            <h3 class="text-2xl font-bold text-white transition-transform duration-300 transform group-hover:scale-105">Yoga & Flexibility</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form / CTA Section -->
+        <section id="contact" class="bg-indigo-600 text-white py-16 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Transform?</h2>
+                <p class="text-lg mb-8 opacity-90">Sign up today for a free consultation and take the first step towards a better you.</p>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Your Name" class="w-full p-4 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    <input type="email" placeholder="Your Email" class="w-full p-4 rounded-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-200">
+                    <button type="submit" class="w-full bg-white text-indigo-600 font-bold py-4 rounded-xl shadow-md hover:bg-gray-100 transition-colors duration-300">
+                        Join Now
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Workout Details Section (Initially Hidden) -->
+    <section id="workout-details" class="hidden py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
+        <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-6 sm:p-8">
+            <div class="flex justify-between items-center mb-6">
+                <button id="back-button" class="flex items-center space-x-2 text-indigo-600 font-semibold hover:text-indigo-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Back to Workouts</span>
+                </button>
+            </div>
+            <div class="w-full h-80 rounded-lg overflow-hidden mb-6">
+                 <img id="details-image" src="" alt="" class="w-full h-full object-cover">
+            </div>
+            <h2 id="details-title" class="text-3xl sm:text-4xl font-bold mb-4 text-center"></h2>
+            <p id="details-description" class="text-gray-600 leading-relaxed text-lg mb-6"></p>
+
+            <div id="details-extra-info" class="space-y-4">
+                <!-- Additional info will be added here via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 px-4 sm:px-6 lg:px-8 text-center">
+        <p>&copy; 2025 FitLife. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Workout data for the details page
+        const workoutData = {
+            strength: {
+                title: 'Strength Training',
+                description: 'Our strength training program is designed to help you build muscle, increase bone density, and boost your metabolism. We focus on compound movements like squats, deadlifts, and bench presses, complemented by isolation exercises to sculpt and tone your body. Our trainers will guide you on proper form to prevent injury and maximize your gains.',
+                image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg',
+                benefits: [
+                    'Build muscle and increase strength.',
+                    'Improve bone density and joint health.',
+                    'Boost metabolism and burn more calories.',
+                    'Enhance athletic performance.'
+                ]
+            },
+            cardio: {
+                title: 'Cardio Workout',
+                description: 'Improve your cardiovascular health with our dynamic cardio workouts. From high-intensity interval training (HIIT) to steady-state cardio on treadmills and ellipticals, our classes are designed to increase your endurance, burn fat, and strengthen your heart. Get your blood pumping and feel the energy!',
+                image: 'https://images.pexels.com/photos/3764154/pexels-photo-3764154.jpeg',
+                benefits: [
+                    'Improve heart and lung health.',
+                    'Increase endurance and stamina.',
+                    'Effective for weight loss and fat burning.',
+                    'Boost mood and reduce stress.'
+                ]
+            },
+            yoga: {
+                title: 'Yoga & Flexibility',
+                description: 'Find balance and tranquility with our yoga and flexibility classes. These sessions focus on gentle stretching, controlled breathing, and holding poses to improve your flexibility, reduce muscle tension, and calm your mind. Perfect for unwinding after a long day or complementing your other workouts.',
+                image: 'https://images.pexels.com/photos/868757/pexels-photo-868757.jpeg',
+                benefits: [
+                    'Increase flexibility and range of motion.',
+                    'Reduce stress and improve mental clarity.',
+                    'Strengthen core muscles and improve balance.',
+                    'Improve posture and reduce back pain.'
+                ]
+            }
+        };
+
+        // Get elements
+        const mainContent = document.getElementById('main-content');
+        const workoutDetailsSection = document.getElementById('workout-details');
+        const detailsTitle = document.getElementById('details-title');
+        const detailsDescription = document.getElementById('details-description');
+        const detailsImage = document.getElementById('details-image');
+        const detailsExtraInfo = document.getElementById('details-extra-info');
+        const backButton = document.getElementById('back-button');
+
+        // Add event listeners to workout cards
+        document.querySelectorAll('[data-workout]').forEach(card => {
+            card.addEventListener('click', function() {
+                const workoutType = this.getAttribute('data-workout');
+                const data = workoutData[workoutType];
+
+                if (data) {
+                    // Populate details section with data
+                    detailsTitle.textContent = data.title;
+                    detailsDescription.textContent = data.description;
+                    detailsImage.src = data.image;
+                    detailsImage.alt = data.title + ' image';
+
+                    // Clear previous extra info and add new
+                    detailsExtraInfo.innerHTML = '';
+                    if (data.benefits) {
+                        const benefitsList = document.createElement('ul');
+                        benefitsList.classList.add('list-disc', 'list-inside', 'text-gray-700');
+                        benefitsList.innerHTML = `<h4 class="text-xl font-semibold mb-2">Key Benefits:</h4>`;
+                        data.benefits.forEach(benefit => {
+                            const li = document.createElement('li');
+                            li.textContent = benefit;
+                            benefitsList.appendChild(li);
+                        });
+                        detailsExtraInfo.appendChild(benefitsList);
+                    }
+
+                    // Show details section and hide main content
+                    mainContent.classList.add('hidden');
+                    workoutDetailsSection.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Add event listener to back button
+        backButton.addEventListener('click', function() {
+            workoutDetailsSection.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>
